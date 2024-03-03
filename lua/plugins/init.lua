@@ -68,10 +68,6 @@ local default_plugins = {
   },
 
   {
-    "windwp/nvim-ts-autotag"
-  },
-
-  {
     "nvim-treesitter/nvim-treesitter",
     event = { "BufReadPost", "BufNewFile" },
     tag = "v0.9.2",
@@ -261,6 +257,14 @@ local default_plugins = {
   {
     "wellle/targets.vim",
     lazy = false
+  },
+
+  {
+    "windwp/nvim-ts-autotag",
+    lazy = false,
+    config = function(_, opts)
+      require('nvim-ts-autotag').setup()
+    end,
   },
 }
 
